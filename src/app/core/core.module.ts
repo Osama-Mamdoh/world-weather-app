@@ -1,6 +1,7 @@
 import { ErrorHandler, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { APP_CONFIG, AppConfig } from '@core/configs/app.config';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GlobalErrorHandler } from '@core/helpers';
 import {
@@ -23,6 +24,7 @@ import { ToastrModule } from 'ngx-toastr';
     }),
   ],
   providers: [
+    { provide: APP_CONFIG, useValue: AppConfig },
     { provide: ErrorHandler, useClass: GlobalErrorHandler },
     {
       provide: HTTP_INTERCEPTORS,

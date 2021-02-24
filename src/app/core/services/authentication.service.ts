@@ -21,12 +21,4 @@ export class AuthenticationService {
   public set userValue(user) {
     this.userSubject.next(user);
   }
-
-  public isAuthenticated() {
-    return true;
-  }
-
-  public getToken() {
-    return '';
-  }
 }

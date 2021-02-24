@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: '',
+  baseUrl: 'https://api.worldweatheronline.com/premium/v1/weather.ashx',
 };
 
 /*

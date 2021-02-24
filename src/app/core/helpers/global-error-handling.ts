@@ -11,21 +11,19 @@ export class GlobalErrorHandler implements ErrorHandler {
     const logger = this.injector.get(LoggingService);
     const notifier = this.injector.get(NotificationService);
     let message;
-    let stackTrace;
     let errorType: string;
     if (error instanceof HttpErrorResponse) {
       // Server error
       message = errorService.getServerErrorMessage(error);
-      // stackTrace = errorService.getServerErrorStackTrace(error);
       errorType = 'Server Side Error';
-      notifier.showError(message);
+      notifier.showError(message, 'Error', {});
     } else {
       // Client Error
       message = errorService.getClientErrorMessage(error);
       errorType = 'Client Side Error';
-      notifier.showError(message);
+      notifier.showError(message, 'Error', {});
     }
     // Always log errors
-    logger.logError(message, stackTrace);
+    logger.logError(message);
   }
 }

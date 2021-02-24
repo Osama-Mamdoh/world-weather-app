@@ -1,0 +1,7 @@
+<div class="card" [ngStyle]="{ 'background-image': 'url(' + city.image + ')' }">
+  <h3 class="ml-auto mr-4 mt-3 mb-0">{{ city.name }}</h3>
+  <p class="ml-auto mr-4 mb-0 text-capitalize">{{ city.generalWeather }}</p>
+  <h2 class="ml-auto mr-4">{{ city.temperature }}&#176;C</h2>
+  <p class="time-font mb-0 ml-4 mt-auto">{{ city.time }}</p>
+  <p class="ml-4 mb-4">{{ city.date }}</p>
+</div>
